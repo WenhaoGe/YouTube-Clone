@@ -15,7 +15,7 @@ app.post("/process-video", (req, res) => {
     }
 
     ffmpeg(inputFilePath)
-        .outputOptions("-vf", "scale=-1.360")
+        .outputOptions("-vf", "scale=-1:360")
         .on("end", () => {
             res.status(200).send("Video processing finished successfully");
         })
