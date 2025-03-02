@@ -20,7 +20,7 @@ app.post("/process-video", async (req, res) => {
         }
     } catch (error) {
         console.error("Error processing video request:", error); // Log the detailed error
-        return res.status(400).send("Bad request: missing fileName");
+        res.status(400).send("Bad request: missing fileName");
     }
 
     const inputFileName = data.name;
@@ -38,7 +38,7 @@ app.post("/process-video", async (req, res) => {
         ]);
 
         console.error(error);
-        return res.status(500).send("Interval server error: video processing failed.");
+        res.status(500).send("Interval server error: video processing failed.");
     }
 
     // upload the processed video to the cloud storage
@@ -49,7 +49,7 @@ app.post("/process-video", async (req, res) => {
         deleteProcessedVideo(outputFileName)
     ]);
 
-    return res.status(200).send("Video processed successfully");
+    res.status(200).send("Video processed successfully");
 }); 
 
 const port = process.env.PORT || 3000;
