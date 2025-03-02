@@ -7,8 +7,8 @@ import ffmpeg from "fluent-ffmpeg";
 
 
 const storage = new Storage();
-const rawVideoBucketName = "Wenhao-raw-videos";
-const processedVideoBucketName = "Wenhao-processed-videos";
+const rawVideoBucketName = "wenhao-raw-videos";
+const processedVideoBucketName = "wenhao-processed-videos";
 
 const localRawVideoPath = "./raw-videos";
 const localProcessedVideoPath = "./processed-videos";
